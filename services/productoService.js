@@ -5,19 +5,19 @@ class ProductoService {
         return await productoRepository.create(userData);
       }
     
-      async getUserById(id) {
+      async getProductoById(id) {
         return await productoRepository.findById(id);
       }
     
-      async getAllUsers() {
+      async getAllProducto() {
         return await productoRepository.findAll();
       }
     
-      async updateUser(id, userData) {
+      async updateProducto(id, userData) {
         return await productoRepository.update(id, userData);
       }
     
-      async deleteUser(id) {
+      async deleteProducto(id) {
         return await productoRepository.delete(id);
       }
 }
