@@ -1,5 +1,8 @@
 const userRoutes = require('./routes/userRoutes');
-const productoRoutes =require('./routes/productoRoutes');
+const productoRoutes =require('./routes/producto/productoRoutes');
+const CategoriaRoutes =require('./routes/producto/categoriaRoutes');
+const SubCategoriaRoutes =require('./routes/producto/subCategoriaRoutes');
+const UnidadMedidaRoutes =require('./routes/producto/unidadMedidaRoutes');
 
 const express = require('express');
 const connectDB = require('./config/database');
@@ -16,6 +19,9 @@ connectDB();
 app.use(express.json());
 app.use('/api', userRoutes);
 app.use('/producto', productoRoutes);
+app.use('/categoria', CategoriaRoutes);
+app.use('/subCategoria', SubCategoriaRoutes);
+app.use('/unidadMedida', UnidadMedidaRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

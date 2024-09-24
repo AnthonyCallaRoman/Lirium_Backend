@@ -1,4 +1,4 @@
-const productoService = require('../services/productoService');
+const productoService = require('../../services/producto/productoService');
 
 class ProductoController {
   async createProducto(req, res) {
@@ -10,7 +10,7 @@ class ProductoController {
     }
   }
 
-  async getProducto(rew, res) {
+  async getProducto(req, res) {
     try{
       const producto = await productoService.getProductoById(req.params.id);
       if (!producto) return res.status(404).json({ message: 'Product not found' });
@@ -20,7 +20,7 @@ class ProductoController {
     } 
   }
 
-  async getAllProducto(rec, res) {
+  async getAllProducto(req, res) {
     try {
       const producto = await productoService.getAllProducto();
       res.json(producto);
