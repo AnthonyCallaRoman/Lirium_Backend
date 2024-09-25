@@ -11,7 +11,7 @@ class CategoriaRepository {
   }
 
   async findAll() {
-    return await Categoria.find();
+    return await Categoria.find().populate('subcategoria');
   }
 
   async update(id, userData) {
